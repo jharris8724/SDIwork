@@ -15,13 +15,32 @@ var groupMembers = function () {
 		"addmembers": addmembers,
 		"memberList": memberList
 		};
+}; 
+
+var vehicle = function () {
+	var truckBed = [];
+	var cargoLoad = function (item) { truckBed.push(item); };
+	var getType = function () { return type; };
+		
+	return {
+		"type": getType,
+	 	"cargoLoad": cargoLoad
+	 };
 };
+
 
 var group = groupMembers();
 group.addmembers("Neal");
 group.memberList();
 group.addmembers("Rhett");
 group.memberList();
+
+var truck = vehicle();
+truck.cargoLoad("fuel");
+truck.cargoLoad("ammo");
+
+
+
 
 
 
