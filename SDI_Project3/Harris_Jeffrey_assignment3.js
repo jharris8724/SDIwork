@@ -19,10 +19,16 @@ var groupMembers = function () {
 
 var vehicle = function () {
 	var truckBed = [];
+	var fuelTank = [];
 	var cargoLoad = function (item) { truckBed.push(item); };
 	var cargoList = function () {
 		say("cargo in truck: " + truckBed + ".");
 	};
+	var fillUp = function (numberOfGallons) { 
+		var fuelAdded = numberOfGallons;
+		fuelTank.push(fuelAdded);
+	};
+
 	var getType = function () { return type; };
 		
 	return {
