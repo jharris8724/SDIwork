@@ -28,13 +28,19 @@ var vehicle = function () {
 		var fuelAdded = numberOfGallons;
 		fuelTank.push(fuelAdded);
 	};
+	var checkFuel = function () {
+		say(name + "fuel (in gallons): " + fuelTank + ".");
+	};
 
 	var getType = function () { return type; };
 		
 	return {
 		"type": getType,
 	 	"cargoLoad": cargoLoad,
-	 	"cargoList": cargoList
+	 	"cargoList": cargoList,
+	 	"fillUp": fillUp,
+	 	"checkFuel": checkFuel
+	 	
 	 };
 };
 
@@ -50,6 +56,8 @@ truck.cargoLoad("fuel");
 truck.cargoList();
 truck.cargoLoad("ammo");
 truck.cargoList();
+truck.fillUp(5);
+truck.checkFuel();
 
 
 
