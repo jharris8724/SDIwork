@@ -20,11 +20,15 @@ var groupMembers = function () {
 var vehicle = function () {
 	var truckBed = [];
 	var cargoLoad = function (item) { truckBed.push(item); };
+	var cargoList = function () {
+		say("cargo in truck: " + truckBed + ".");
+	};
 	var getType = function () { return type; };
 		
 	return {
 		"type": getType,
-	 	"cargoLoad": cargoLoad
+	 	"cargoLoad": cargoLoad,
+	 	"cargoList": cargoList
 	 };
 };
 
@@ -37,7 +41,9 @@ group.memberList();
 
 var truck = vehicle();
 truck.cargoLoad("fuel");
+truck.cargoList();
 truck.cargoLoad("ammo");
+truck.cargoList();
 
 
 
