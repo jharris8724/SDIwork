@@ -29,15 +29,9 @@ var vehicle = function () {
 		fuelTank.push(fuelAdded);
 	};
 	var checkFuel = function () {
-		var totalFuel = 0
-		var addFuel = function (fuelTank) {
-			for(var i = 0; i < fuelTank.length; i++) {
-				totalFuel += fuelTank[i];
-			};
-				return totalFuel;
-		};
-		say(name + "fuel (in gallons): " + totalFuel + ".");
+		say(name + "fuel (in gallons): " + fuelTank + ".");
 	};
+
 
 	var getType = function () { return type; };
 		
