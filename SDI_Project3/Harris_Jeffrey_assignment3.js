@@ -3,9 +3,25 @@ alert("JavaScript works!");
 var say = function (message) {console.log(message); }; // Global Variable
 
 var baseCamp = {
-	"isSafe": true,
-	"name": "",
-	"scavangingGroup": ["Jeff", "Steve"],
+	"isSafe": true, // Boolean Property
+	"name": "New Hope", // String Property
+	"scavangingGroup": ["Jeff", "Steve"], // Array Property
+	"population": 30, // Number Property
+	"storeHouse": {
+		"weapons": {
+			"shotguns": 7,
+			"pistols": 12,
+			"rifles": 6,
+			"melee": 21
+		},
+		"ammunition": {
+			"shotgunShells": 200,
+			"pistolRounds": 600,
+			"rifleRounds": 500,
+		},
+		"fuelInGallons": 75,
+		"FoodInPounds": 975
+	}, // Object Property
 	
 	
 }; // Global variable
