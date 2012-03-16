@@ -22,23 +22,26 @@ var baseCamp = {
 		"fuelInGallons": 75,
 		"FoodInPounds": 975
 	}, // Object Property
-	
+	"greetNewComer": function (name) {
+		var currentTime = (new Date()).getHours(),
+		timeOfDay;
+		if (currentTime < 12) {timeofDay = "morning";}
+		else if (currentTime < 17) {timeOfDay = "afternoon";}
+		else {timeOfDay = "evening";}
+		say("Good " + timeOfDay + ", " + name + "! Welcome to " + baseCamp.name
+		+ ".");
+	} // Procedure Method
 	
 }; // Global variable
 
-var groupMembers = function () {
-	var members = ["Jeff", "Steve"];
-	var addmembers = function (member) {
-		members.push(member);
-	};
-	var memberList = function () {
-		say("Members in group: " + members + "."); // Output
-	};
+
+
+var addMembers = function (newMembers) {
+	var currentMembers = baseCamp.scavangingGroup;
+	var members = currentMembers.concat(newMembers);
 	
-	return {
-		"addmembers": addmembers,
-		"memberList": memberList
-		};
+	
+	return members; // Array Return
 }; 
 var vehicle = function () {
 	var truckBed = []; // local variable
@@ -73,11 +76,11 @@ var vehicle = function () {
 };
 
 
-var group = groupMembers();
-group.addmembers("Neal");
-group.memberList();
-group.addmembers("Rhett");
-group.memberList();
+baseCamp.greetNewComer("stranger");
+
+var groupMembers = addMembers(["Neal", "Rhett"]); // Array Argument
+
+say(groupMembers);
 
 var truck = vehicle();
 truck.cargoLoad("fuel");
