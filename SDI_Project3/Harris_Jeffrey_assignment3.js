@@ -1,6 +1,14 @@
 alert("JavaScript works!");
 
-var say = function (message) {console.log(message); };
+var say = function (message) {console.log(message); }; // Global Variable
+
+var baseCamp = {
+	"isSafe": true,
+	"name": "",
+	"scavangingGroup": ["Jeff", "Steve"],
+	
+	
+}; // Global variable
 
 var groupMembers = function () {
 	var members = ["Jeff", "Steve"];
@@ -8,7 +16,7 @@ var groupMembers = function () {
 		members.push(member);
 	};
 	var memberList = function () {
-		say("Members in group: " + members + ".");
+		say("Members in group: " + members + "."); // Output
 	};
 	
 	return {
@@ -16,20 +24,23 @@ var groupMembers = function () {
 		"memberList": memberList
 		};
 }; 
-
 var vehicle = function () {
-	var truckBed = [];
+	var truckBed = []; // local variable
 	var fuelTank = [];
-	var cargoLoad = function (item) { truckBed.push(item); };
+	var cargoLoad = function (item) { truckBed.push(item); }; // String arguement passed into this function
 	var cargoList = function () {
 		say("cargo in truck: " + truckBed + ".");
 	};
 	var fillUp = function (numberOfGallons) { 
 		var fuelAdded = numberOfGallons;
 		fuelTank.push(fuelAdded);
-	};
+	}; // Number argument passed into this function
 	var checkFuel = function () {
-		say(name + "fuel (in gallons): " + fuelTank + ".");
+		var totalFuel = 0
+		for(var i = 0; i <fuelTank.length; i += 1) {
+			totalFuel += fuelTank[i]; // Math
+		}; // Nested For Loop (contains math operation)
+		say( "fuel in truck: " + totalFuel + " gallons.");
 	};
 
 
@@ -42,7 +53,7 @@ var vehicle = function () {
 	 	"fillUp": fillUp,
 	 	"checkFuel": checkFuel
 	 	
-	 };
+	 }; // Return Object
 };
 
 
@@ -58,6 +69,8 @@ truck.cargoList();
 truck.cargoLoad("ammo");
 truck.cargoList();
 truck.fillUp(5);
+truck.checkFuel();
+truck.fillUp(2);
 truck.checkFuel();
 
 
