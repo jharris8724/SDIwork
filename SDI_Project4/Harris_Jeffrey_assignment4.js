@@ -29,16 +29,15 @@ var jeffhLib = function () {
 				
 			};
 			
-			var titleCase = function (string) {
-				return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase()
-				+ txt.substr(1).toLowerCase();});
+			var returnNumber = function (string) {
+				console.log(parseFloat(string));
 			};
-	
 	
 	
 	return {
 		"isPhoneNumber": isPhoneNumber,
-		"isEmail": isEmail
+		"isEmail": isEmail,
+		"returnNumber": returnNumber
 	};
 };
 var lib = jeffhLib();
@@ -50,64 +49,7 @@ lib.isPhoneNumber(number);
 var email = "johndoe123@someaccount.com";
 lib.isEmail(email);
 
-var title = "hello world!";
-lib.titleCase(title);
 
-/*
-var myString = "407-679-0100";
+var stringNumber = "24"
 
-var end = myString.indexOf("-");
-
-console.log(myString.substring(0,end));
-
-var start = myString.indexOf("-")+1;
-var end = myString.lastIndexOf("-");
-
-console.log(myString.substring(start,end));
-
-var start = myString.lastIndexOf("-")+1;
-var end = myString.length;
-
-console.log(myString.substring(start,end));
-
-
-
-
-var isPhoneNumber = function (numberString) {
-	var myString = numberString;
-	
-	if (myString.length === 12)
-	var indexString = function () {
-		
-	};
-	
-	if (myString === ) {};
-	return ;
-};
-
-
-
-
-//var phoneNumber = isPhoneNumber("123-456-7890");
-
-
-var titleCase = function (string) {
-	if (string.length === 12) {
-		var areaCode = string.indexOf(0,4),
-			firstThree = string.indexOf(5,8),
-			lastFour = string.indexOf(9,12)
-		;
-		
-		console.log(string.substring(areaCode));
-		console.log(firstThree);
-		console.log(lastFour);
-		
-	};
-	
-};
-
-
-
-var word = titleCase("hello world!");
-
-*/
+lib.returnNumber(stringNumber);
