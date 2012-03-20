@@ -1,27 +1,24 @@
 alert("JavaScript works!");
 
-
-
-
 var jeffhLib = function () {
 
-	var isPhoneNumber = function (number) {
-	
-		if (number.length === 12) {
-			if (number.charAt(3) && number.charAt(7) === "-") {
-			isPhoneNumber = true;
-			console.log('"'+ number +'"' + " is a valid phone number.");
-			}
-			else {
-			isPhoneNumber = false;
-			console.log('"'+ number +'"' + " is a not valid phone number.");
-			};
-		}
-		else {
-		isPhoneNumber = false;
-		console.log('"'+ number +'"' + " is a not valid phone number.");
-		};
-	}; 
+			var isPhoneNumber = function (number) {
+			
+				if (number.length === 12) {
+					if (number.charAt(3) && number.charAt(7) === "-") {
+					isPhoneNumber = true;
+					console.log('"'+ number +'"' + " is a valid phone number.");
+					}
+					else {
+					isPhoneNumber = false;
+					console.log('"'+ number +'"' + " is a not valid phone number.");
+					};
+				}
+				else {
+				isPhoneNumber = false;
+				console.log('"'+ number +'"' + " is a not valid phone number.");
+				};
+			}; 
 		
 	
 	
