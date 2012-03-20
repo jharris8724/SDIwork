@@ -2,12 +2,17 @@ alert("JavaScript works!");
 
 var jeffhLib = function () {
 
-			var isPhoneNumber = function (number) {
-			
-				if (number.length === 12) {
-					if (number.charAt(3) && number.charAt(7) === "-") {
-					isPhoneNumber = true;
-					console.log('"'+ number +'"' + " is a valid phone number.");
+			var isPhoneNumber = function (numberString) {
+				if (number.indexOf(0,2) && number.indexOf(4,7) && number.indexOf(9,11)) {
+					if (number.length === 12) {
+						if (number.charAt(3) && number.charAt(7) === "-") {
+						isPhoneNumber = true;
+						console.log('"'+ number +'"' + " is a valid phone number.");
+						}
+						else {
+						isPhoneNumber = false;
+						console.log('"'+ number +'"' + " is a not valid phone number.");
+						};
 					}
 					else {
 					isPhoneNumber = false;
@@ -15,16 +20,25 @@ var jeffhLib = function () {
 					};
 				}
 				else {
-				isPhoneNumber = false;
-				console.log('"'+ number +'"' + " is a not valid phone number.");
+					isPhoneNumber = false;
+					console.log('"'+ number +'"' + " is a not valid phone number.");
 				};
 			}; 
-		
+			
+			var isEmail = function (email) {
+				
+			};
+			
+			var titleCase = function (string) {
+				return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase()
+				+ txt.substr(1).toLowerCase();});
+			};
 	
 	
 	
 	return {
-		"isPhoneNumber": isPhoneNumber
+		"isPhoneNumber": isPhoneNumber,
+		"isEmail": isEmail
 	};
 };
 var lib = jeffhLib();
@@ -32,6 +46,12 @@ var lib = jeffhLib();
 
 var number = "123-456-7890";
 lib.isPhoneNumber(number);
+
+var email = "johndoe123@someaccount.com";
+lib.isEmail(email);
+
+var title = "hello world!";
+lib.titleCase(title);
 
 /*
 var myString = "407-679-0100";
