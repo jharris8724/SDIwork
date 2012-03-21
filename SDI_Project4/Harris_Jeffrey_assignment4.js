@@ -2,10 +2,14 @@ alert("JavaScript works!");
 
 var jeffhLib = function () {
 
-			var isPhoneNumber = function (numberString) {
-				if (number.indexOf(0,2) && number.indexOf(4,7) && number.indexOf(9,11)) {
+			var isPhoneNumber = function (number) {
+				var areaCode = isNaN(number.substring(0,3)),
+					firstThree = isNaN(number.substring(4,7)),
+					lastFour = isNaN(number.substring(8,12))
+				;
+				if (areaCode===false && firstThree===false && lastFour===false) {
 					if (number.length === 12) {
-						if (number.charAt(3) && number.charAt(7) === "-") {
+						if (number.charAt(3)==="-" && number.charAt(7)==="-") {
 						isPhoneNumber = true;
 						console.log('"'+ number +'"' + " is a valid phone number.");
 						}
@@ -21,7 +25,7 @@ var jeffhLib = function () {
 				}
 				else {
 					isPhoneNumber = false;
-					console.log('"'+ number +'"' + " is a not valid phone number.");
+					console.log('"' + number + '"' + " is a not valid phone number.");
 				};
 			}; 
 			
@@ -51,5 +55,5 @@ lib.isEmail(email);
 
 
 var stringNumber = "24"
-
 lib.returnNumber(stringNumber);
+
