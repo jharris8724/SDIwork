@@ -33,7 +33,11 @@ var jeffhLib = function () {
 				
 			};
 			
-			var returnNumber = function (string) {
+			var addDecimal = function (number) {
+				console.log(number.toFixed(2));
+			};
+			
+			var showNumber = function (string) {
 				console.log(parseFloat(string));
 			};
 	
@@ -41,19 +45,22 @@ var jeffhLib = function () {
 	return {
 		"isPhoneNumber": isPhoneNumber,
 		"isEmail": isEmail,
-		"returnNumber": returnNumber
+		"showNumber": showNumber,
+		"addDecimal": addDecimal
 	};
 };
 var lib = jeffhLib();
 
 
-var number = "123-456-7890";
-lib.isPhoneNumber(number);
+var phoneNumber = "123-456-7890";
+lib.isPhoneNumber(phoneNumber);
 
 var email = "johndoe123@someaccount.com";
 lib.isEmail(email);
 
-
 var stringNumber = "24"
-lib.returnNumber(stringNumber);
+lib.showNumber(stringNumber);
+
+var number = 10.5
+lib.addDecimal(number);
 
