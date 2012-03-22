@@ -28,11 +28,7 @@ var jeffhLib = function () {
 					console.log('"' + number + '"' + " is a not valid phone number.");
 				};
 			}; // completed
-			
-			var isEmail = function (email) {
-				
-			}; // not completed
-			
+						
 			var isURL = function (website) {
 				var someURL = website.substring(0,5),
 					someSecureURL = website.substring(0,6)
@@ -45,18 +41,20 @@ var jeffhLib = function () {
 				}
 
 			}; // completed
-			
-			var titleCase = function (string) {
-				//string.toLowerCase.replace(/^(.)|\s(.)/g)
-			
-			}; // not completed
-			
+						
 			var addDecimal = function (number) {
 				console.log(number.toFixed(2));
 			}; // completed
 			
 			var convertToNumber = function (string) {
 				console.log(parseFloat(string));
+			}; // completed
+			
+			var timeElapsed = function (date1, date2) {
+				var elapsedTime = date2 - date1;
+				var hours = elapsedTime/3600000;
+				console.log("There are " + hours + " hours between " + date1
+				+ " and " + date2 + ".");
 			}; // completed
 			
 			var findValue = function (array, givenNumber) {
@@ -69,11 +67,10 @@ var jeffhLib = function () {
 	
 	return {
 		"isPhoneNumber": isPhoneNumber,
-		"isEmail": isEmail,
 		"isURL": isURL,
-		"titleCase": titleCase,
-		"convertToNumber": convertToNumber,
 		"addDecimal": addDecimal,
+		"convertToNumber": convertToNumber,
+		"timeElapsed": timeElapsed,
 		"findValue": findValue
 	};
 };
@@ -81,26 +78,24 @@ var lib = jeffhLib();
 
 
 var phoneNumber = "123-456-7890";
-lib.isPhoneNumber(phoneNumber);
-
-var email = "johndoe123@someaccount.com";
-lib.isEmail(email);
+lib.isPhoneNumber(phoneNumber); // works
 
 var website = "http://fullsail.edu";
-lib.isURL(website);
-
-var title = "hello world!"
-lib.titleCase(title);
+lib.isURL(website); // works
 
 var number = 10.5
-lib.addDecimal(number);
+lib.addDecimal(number); // works
 
 var stringNumber = "24"
-lib.convertToNumber(stringNumber);
+lib.convertToNumber(stringNumber); // works
 
 var array = [0,1,5,12,26,38,49,63,94,102,150,334],
 	givenNumber = 40;
-lib.findValue(array, givenNumber);
+lib.findValue(array, givenNumber); // works
+
+var date1 = new Date(2012, 5, 2), // date listed as year, month, day
+	date2 = new Date(2012, 5, 5); // date listed as year, month, day
+lib.timeElapsed(date1, date2); // works
 
 
 
